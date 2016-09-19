@@ -181,6 +181,10 @@ imgLoader.load("Res/grid-dashed.png", function (image) {
     scene.add(boundsMesh);
 });
 
+function toggleBB(cb) {
+    boundsMesh.visible = cb.checked;
+}
+
 var machine = {};
 var machineBlocks = [];
 
@@ -224,8 +228,8 @@ function doStuffWithMachine() {
         /*Number(machine["Machine"]["Global"].Position.x)*/0,
         Number(machine["Machine"]["Global"].Position.y),
         /*Number(machine["Machine"]["Global"].Position.z)*/0);
-    //camera.position.set(0, 15, 15);
-    //controls.target.set(0, 0, 0);
+    //camera.position.set(0, 15, 15).add(machineOffset);
+    //controls.target.set(0, 0, 0).add(machi;
     //camera.lookAt(controls.target);
     if (machineBlocks.length > 0) {
         machineBlocks.forEach(function (v, i) {
