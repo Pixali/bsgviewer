@@ -221,9 +221,9 @@ imgLoader.load("Skins/Template/Cannon/darkmetal_png.png", function (image) {
 function doStuffWithMachine() {
     //floorMesh.position.y = -Number(machine["Machine"]["Global"].Position.y);
     var machineOffset = new THREE.Vector3(
-        Number(machine["Machine"]["Global"].Position.x),
+        /*Number(machine["Machine"]["Global"].Position.x)*/0,
         Number(machine["Machine"]["Global"].Position.y),
-        Number(machine["Machine"]["Global"].Position.z));
+        /*Number(machine["Machine"]["Global"].Position.z)*/0);
     //camera.position.set(0, 15, 15);
     //controls.target.set(0, 0, 0);
     //camera.lookAt(controls.target);
