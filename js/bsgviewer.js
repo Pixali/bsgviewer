@@ -222,6 +222,11 @@ imgLoader.load("Skins/Template/Cannon/darkmetal_png.png", function (image) {
     boxMat.map = boxTex;
 });
 
+var showBraces = true;
+function toggleBrace(cb) {
+    showBraces = cb.checked;
+}
+
 function doStuffWithMachine() {
     //floorMesh.position.y = -Number(machine["Machine"]["Global"].Position.y);
     var machineOffset = new THREE.Vector3(
@@ -257,6 +262,7 @@ function doStuffWithMachine() {
         {
             switch (blocks[i].id) {
                 case "7": // brace
+                    if (!showBraces) break; // toggle adding braces
                     var sPoint = boxMesh.clone(),
                         ePoint = boxMesh.clone(),
                         line = boxFlatMesh.clone();
