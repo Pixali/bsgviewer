@@ -268,9 +268,16 @@ function doStuffWithMachine() {
                         line = boxFlatMesh.clone();
                     var cont = new THREE.Object3D();
                     sPoint.scale.set(0.4, 0.4, 0.4); ePoint.scale.set(0.4, 0.4, 0.4);
-                    var ePos = blocks[i].Data.Vector3[1];
+                    var sPos = blocks[i].Data.Vector3[0];
+                    var sRot = blocks[i].Data.Vector3[1];
+                    var ePos = blocks[i].Data.Vector3[2];
+                    var eRot = blocks[i].Data.Vector3[3];
+                    // no point in setting start pos since it should always be 0 0 0
+                    //sPoint.position.set(Number(sPos.X), Number(sPos.Y), Number(sPos.Z));
+                    sPoint.rotation.set(Number(sRot.X) * Math.PI / 180, Number(sRot.Y) * Math.PI / 180, Number(sRot.Z) * Math.PI / 180);
                     ePoint.position.set(Number(ePos.X), Number(ePos.Y), Number(ePos.Z));
-                    
+                    ePoint.rotation.set(Number(eRot.X) * Math.PI / 180, Number(eRot.Y) * Math.PI / 180, Number(eRot.Z) * Math.PI / 180);
+
                     var length = ePoint.position.length();
                     var quat = new THREE.Quaternion();
                     var nP = ePoint.position.clone(); nP.setLength(1);
